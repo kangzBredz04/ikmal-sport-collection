@@ -16,7 +16,7 @@ app.use(express.json());
 const router = express.Router();
 app.use("/api", router);
 
-router.use("/hello", async (_req, res) => {
+app.use("/", async (_req, res) => {
   res.status(200).json({
     message: "Selamat Datang Di Website Sport Collection",
   });
