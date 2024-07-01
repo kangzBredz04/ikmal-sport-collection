@@ -6,13 +6,6 @@ import ProductRoute from "./routes/product-route.js";
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost:5173", "https://sahaba-fashion.vercel.app"],
-//     credentials: true,
-//   })
-// );
-
 app.use(express.json());
 
 const router = express.Router();
