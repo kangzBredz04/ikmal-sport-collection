@@ -2,6 +2,8 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 
+import ProductRoute from "./routes/product-route.js";
+
 const app = express();
 
 app.use(
@@ -15,6 +17,8 @@ app.use(express.json());
 
 const router = express.Router();
 app.use("/api", router);
+
+router.use("/product", ProductRoute);
 
 router.use("/getting-started", async (_req, res) => {
   res.status(200).json({
