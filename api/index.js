@@ -1,17 +1,17 @@
 import express from "express";
 import "dotenv/config";
-import cors from "cors";
+// import cors from "cors";
 
 import ProductRoute from "./routes/product-route.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://sahaba-fashion.vercel.app"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["http://localhost:5173", "https://sahaba-fashion.vercel.app"],
+//     credentials: true,
+//   })
+// );
 
 app.use(express.json());
 
