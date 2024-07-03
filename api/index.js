@@ -3,6 +3,7 @@ import "dotenv/config";
 import cors from "cors";
 
 import ProductRoute from "./routes/product-route.js";
+import UserRoute from "./routes/user-route.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ const router = express.Router();
 app.use("/api", router);
 
 router.use("/product", ProductRoute);
+router.use("/user", UserRoute);
 
 router.use("/getting-started", async (_req, res) => {
   res.status(200).json({
