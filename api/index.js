@@ -4,6 +4,7 @@ import cors from "cors";
 
 import ProductRoute from "./routes/product-route.js";
 import UserRoute from "./routes/user-route.js";
+import CartRoute from "./routes/cart-route.js";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use("/api", router);
 
 router.use("/product", ProductRoute);
 router.use("/user", UserRoute);
+router.use("/cart", CartRoute);
 
 router.use("/getting-started", async (_req, res) => {
   res.status(200).json({
