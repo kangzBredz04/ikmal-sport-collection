@@ -10,10 +10,10 @@ export const getAllUser = async (_req, res) => {
 };
 
 export const registerAccount = async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, full_name } = req.body;
   try {
     const result = await pool.query(
-      "INSERT INTO users (username, pasword) VALUES ($1, $2) RETURNING *",
+      "INSERT INTO users (username, pasword, full_name) VALUES ($1, $2, $3) RETURNING *",
       [username, password]
     );
     res.status(201).json({ msg: "Pendaftaran berhasil", data: result.rows[0] });
