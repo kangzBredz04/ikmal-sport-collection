@@ -14,7 +14,7 @@ export const registerAccount = async (req, res) => {
   try {
     const result = await pool.query(
       "INSERT INTO users (username, pasword, full_name) VALUES ($1, $2, $3) RETURNING *",
-      [username, password]
+      [username, password, full_name]
     );
     res.status(201).json({ msg: "Pendaftaran berhasil", data: result.rows[0] });
   } catch (error) {
